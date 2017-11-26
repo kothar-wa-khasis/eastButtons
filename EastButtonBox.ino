@@ -7,7 +7,7 @@
 #define DATA_PIN2 5
 #define DATA_PIN3 6
 
-#define BRIGHTNESS  255
+#define BRIGHTNESS  130
 #define FRAMES_PER_SECOND 60
 
 CRGB leds1[NUM_LEDS1];
@@ -139,6 +139,20 @@ void renderEffects(int buttonPressed) {
       break;
     case buttonPin02:
       Serial.println("Button 2 pressed.");  
+
+ /*
+      for( int i = 0; i < NUM_LEDS1; i++) {
+        leds1[i] = CRGB::Blue;
+     }
+      // fill tentacle 2  
+      for( int i = 0; i < NUM_LEDS2; i++) {
+         leds2[i] = CRGB::Red;
+      }    
+      // fill tentacle 3
+      for( int i = 0; i < NUM_LEDS3; i++) {
+        leds3[i] = CRGB::Green;
+      }    
+*/      
       bpm(leds1, NUM_LEDS1);
       bpm(leds2, NUM_LEDS2);
       bpm(leds3, NUM_LEDS3);
@@ -150,7 +164,7 @@ void renderEffects(int buttonPressed) {
       Fire2012 (leds3, NUM_LEDS3);
       break;
     case 0:
-      Serial.println("No button pressed??");  
+      Serial.println("No button pressed?!?");  
       break;
     }
 }
@@ -193,8 +207,6 @@ void noisepalWithGlitter()
   addGlitter(leds2, NUM_LEDS2,80);
   addGlitter(leds3, NUM_LEDS3,80);
 }
-
-
 
 /*
  * Efect #2
